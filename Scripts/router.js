@@ -109,24 +109,25 @@
 
 let router = new core.Router();
 router.AddTable([
-    "#/",
-    "#/home",
-    "#/about",
-    "#/services",
-    "#/contact",
-    "#/contact-list",
-    "#/products",
-    "#/login",
-    "#/register",
-    "#/edit"
+    "/",
+    "/home",
+    "/about",
+    "/services",
+    "/contact",
+    "/contact-list",
+    "/products",
+    "/login",
+    "/register",
+    "/edit"
 ]);
 
+history.pushState('', '', '/');
 let route = location.pathname; // alias for location.pathname
-
 // if route is find in the routing table
 if(router.Find(route) > -1)
 {
-    router.ActiveLink = (route == "#/") ? "home" : route.substring(1);
+    
+    router.ActiveLink = (route == "/") ? "home" : route.substring(1);
 }
 else
 {
