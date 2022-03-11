@@ -100,7 +100,8 @@
      */
     function LoadHeader(): void
     {
-        $.get("./Views/components/header.html", function(html_data)        {
+        $.get(`./Views/components/header.html`, function(html_data)        
+        {
             $("header").html(html_data); // data payload
 
             AddNavigationEvents();
